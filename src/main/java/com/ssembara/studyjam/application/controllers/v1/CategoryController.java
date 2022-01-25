@@ -1,9 +1,9 @@
 package com.ssembara.studyjam.application.controllers.v1;
 
 import com.ssembara.studyjam.application.dto.ResponseGlobal;
-import com.ssembara.studyjam.application.request.v1.UserCreate;
-import com.ssembara.studyjam.application.request.v1.UserUpdate;
-import com.ssembara.studyjam.presist.usecases.UserUseCase;
+import com.ssembara.studyjam.application.request.v1.category.CategoryStore;
+import com.ssembara.studyjam.application.request.v1.category.CategoryUpdate;
+import com.ssembara.studyjam.presist.usecases.CategoryCase;
 import com.ssembara.studyjam.utility.Response;
 
 import org.springframework.http.ResponseEntity;
@@ -19,11 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping("/api/v1/users")
+@RequestMapping("/api/v1/categories")
 @AllArgsConstructor
-public class UserController {
+public class CategoryController {
 
-    private UserUseCase useCase;
+    private CategoryCase useCase;
 
     @GetMapping
     public ResponseEntity<ResponseGlobal> index() {
@@ -33,22 +33,22 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<ResponseGlobal> create(
-            @RequestBody UserCreate userCreate) {
-        useCase.createUser(userCreate);
-        return Response.buildV1("Success create user");
+            @RequestBody CategoryStore data) {
+        useCase.createCategory(data);
+        return Response.buildV1("Success create data");
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<ResponseGlobal> update(@PathVariable Long id,
-            @RequestBody UserUpdate userUpdate) throws Exception {
-        useCase.updateUser(id, userUpdate);
-        return Response.buildV1("Success update user");
+            @RequestBody CategoryUpdate data) throws Exception {
+        useCase.updateCategory(id, data);
+        return Response.buildV1("Success update data");
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<ResponseGlobal> delete(@PathVariable Long id) throws Exception {
-        useCase.deleteUser(id);
-        return Response.buildV1("Success delete user");
+        useCase.destroyCategory(id);
+        return Response.buildV1("Success delete data");
     }
 
 }
