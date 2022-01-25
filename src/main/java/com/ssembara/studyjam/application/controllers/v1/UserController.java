@@ -1,10 +1,10 @@
-package com.nugrohosamiyono.studyjam.application.controllers.v1;
+package com.ssembara.studyjam.application.controllers.v1;
 
-import com.nugrohosamiyono.studyjam.application.dto.ResponseGlobal;
-import com.nugrohosamiyono.studyjam.application.request.v1.UserCreate;
-import com.nugrohosamiyono.studyjam.application.request.v1.UserUpdate;
-import com.nugrohosamiyono.studyjam.presist.usecases.UserUseCase;
-import com.nugrohosamiyono.studyjam.utility.Response;
+import com.ssembara.studyjam.application.dto.ResponseGlobal;
+import com.ssembara.studyjam.application.request.v1.UserCreate;
+import com.ssembara.studyjam.application.request.v1.UserUpdate;
+import com.ssembara.studyjam.presist.usecases.UserUseCase;
+import com.ssembara.studyjam.utility.Response;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -40,7 +40,7 @@ public class UserController {
 
     @PutMapping("/{id}")
     public ResponseEntity<ResponseGlobal> update(@PathVariable Long id,
-    @RequestBody UserUpdate userUpdate) throws Exception {
+            @RequestBody UserUpdate userUpdate) throws Exception {
         useCase.updateUser(id, userUpdate);
         return Response.buildV1("Success update user");
     }

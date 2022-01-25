@@ -1,4 +1,4 @@
-package com.nugrohosamiyono.studyjam.presist.models;
+package com.ssembara.studyjam.presist.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,16 +13,16 @@ import lombok.Data;
 @Table(name = "user")
 @Data
 public class User {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    
+
     @Column
     private Long id;
-    
+
     @Column
     private String name;
-    
+
     @Column
     private int age;
 }

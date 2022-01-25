@@ -1,11 +1,11 @@
-package com.nugrohosamiyono.studyjam.presist.usecases;
+package com.ssembara.studyjam.presist.usecases;
 
 import java.util.List;
 
-import com.nugrohosamiyono.studyjam.application.request.v1.UserCreate;
-import com.nugrohosamiyono.studyjam.application.request.v1.UserUpdate;
-import com.nugrohosamiyono.studyjam.presist.models.User;
-import com.nugrohosamiyono.studyjam.presist.repos.UserRepo;
+import com.ssembara.studyjam.application.request.v1.UserCreate;
+import com.ssembara.studyjam.application.request.v1.UserUpdate;
+import com.ssembara.studyjam.presist.models.User;
+import com.ssembara.studyjam.presist.repos.UserRepo;
 
 import org.springframework.stereotype.Service;
 

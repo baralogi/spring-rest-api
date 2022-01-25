@@ -1,4 +1,4 @@
-package com.nugrohosamiyono.studyjam.application.dto;
+package com.ssembara.studyjam.application.dto;
 
 import lombok.Data;
 

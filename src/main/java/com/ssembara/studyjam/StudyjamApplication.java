@@ -1,4 +1,4 @@
-package com.nugrohosamiyono.studyjam;
+package com.ssembara.studyjam;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
