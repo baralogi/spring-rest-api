@@ -4,7 +4,7 @@
 
 # Spec
 
-- DB : h2 (in memory volatile)
+- DB : MySQL
 
 # Try it
 
