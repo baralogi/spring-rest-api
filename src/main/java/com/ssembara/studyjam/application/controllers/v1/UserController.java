@@ -1,9 +1,9 @@
 package com.ssembara.studyjam.application.controllers.v1;
 
 import com.ssembara.studyjam.application.dto.ResponseGlobal;
-import com.ssembara.studyjam.application.request.v1.UserCreate;
-import com.ssembara.studyjam.application.request.v1.UserUpdate;
-import com.ssembara.studyjam.presist.usecases.UserUseCase;
+import com.ssembara.studyjam.application.request.v1.user.UserStore;
+import com.ssembara.studyjam.application.request.v1.user.UserUpdate;
+import com.ssembara.studyjam.presist.services.UserService;
 import com.ssembara.studyjam.utility.Response;
 
 import org.springframework.http.ResponseEntity;
@@ -23,7 +23,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class UserController {
 
-    private UserUseCase useCase;
+    private UserService useCase;
 
     @GetMapping
     public ResponseEntity<ResponseGlobal> index() {
@@ -33,8 +33,8 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<ResponseGlobal> create(
-            @RequestBody UserCreate userCreate) {
-        useCase.createUser(userCreate);
+            @RequestBody UserStore userStore) {
+        useCase.storeUser(userStore);
         return Response.buildV1("Success create user");
     }
 

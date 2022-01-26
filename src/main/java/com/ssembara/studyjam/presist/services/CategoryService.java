@@ -1,11 +1,12 @@
-package com.ssembara.studyjam.presist.usecases;
+package com.ssembara.studyjam.presist.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.ssembara.studyjam.application.request.v1.category.CategoryStore;
 import com.ssembara.studyjam.application.request.v1.category.CategoryUpdate;
 import com.ssembara.studyjam.presist.models.Category;
-import com.ssembara.studyjam.presist.repos.CategoryRepo;
+import com.ssembara.studyjam.presist.repositories.CategoryRepository;
 
 import org.springframework.stereotype.Service;
 
@@ -13,24 +14,28 @@ import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor
-public class CategoryCase {
+public class CategoryService {
 
-    private CategoryRepo repo;
+    private CategoryRepository repo;
 
     public List<Category> getAll() {
         return repo.findAll();
     }
 
-    public void createCategory(CategoryStore store) {
+    public void storeCategory(CategoryStore storeCategory) {
         var newCategory = new Category();
-        newCategory.setName(store.getName());
+        newCategory.setName(storeCategory.getName());
 
         repo.save(newCategory);
     }
 
-    public void updateCategory(Long id, CategoryUpdate update) throws Exception {
+    public Optional<Category> showCategory(Long id) throws Exception {
+        return repo.findById(id);
+    }
+
+    public void updateCategory(Long id, CategoryUpdate updateCategory) throws Exception {
         var oldCategory = repo.findById(id).orElseThrow(() -> new Exception("data not found"));
-        oldCategory.setName(update.getName());
+        oldCategory.setName(updateCategory.getName());
 
         repo.save(oldCategory);
     }

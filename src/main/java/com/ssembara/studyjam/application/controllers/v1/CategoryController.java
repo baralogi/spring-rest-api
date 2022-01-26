@@ -3,7 +3,7 @@ package com.ssembara.studyjam.application.controllers.v1;
 import com.ssembara.studyjam.application.dto.ResponseGlobal;
 import com.ssembara.studyjam.application.request.v1.category.CategoryStore;
 import com.ssembara.studyjam.application.request.v1.category.CategoryUpdate;
-import com.ssembara.studyjam.presist.usecases.CategoryCase;
+import com.ssembara.studyjam.presist.services.CategoryService;
 import com.ssembara.studyjam.utility.Response;
 
 import org.springframework.http.ResponseEntity;
@@ -23,7 +23,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class CategoryController {
 
-    private CategoryCase useCase;
+    private CategoryService useCase;
 
     @GetMapping
     public ResponseEntity<ResponseGlobal> index() {
@@ -32,10 +32,16 @@ public class CategoryController {
     }
 
     @PostMapping
-    public ResponseEntity<ResponseGlobal> create(
+    public ResponseEntity<ResponseGlobal> store(
             @RequestBody CategoryStore data) {
-        useCase.createCategory(data);
+        useCase.storeCategory(data);
         return Response.buildV1("Success create data");
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ResponseGlobal> show(@PathVariable Long id) throws Exception {
+        var data = useCase.showCategory(id);
+        return Response.buildV1(data);
     }
 
     @PutMapping("/{id}")
