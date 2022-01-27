@@ -1,4 +1,4 @@
-package com.ssembara.springnews.application.request.v1.user;
+package com.ssembara.springnews.application.requests.v1.user;
 
 import lombok.Data;
 

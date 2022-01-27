@@ -1,4 +1,4 @@
-package com.ssembara.springnews.application.response;
+package com.ssembara.springnews.application.responses;
 
 import lombok.Data;
 

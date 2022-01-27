@@ -1,8 +1,8 @@
 package com.ssembara.springnews.application.controllers.v1;
 
-import com.ssembara.springnews.application.request.v1.user.UserStore;
-import com.ssembara.springnews.application.request.v1.user.UserUpdate;
-import com.ssembara.springnews.application.response.ResponseGlobal;
+import com.ssembara.springnews.application.requests.v1.user.UserStore;
+import com.ssembara.springnews.application.requests.v1.user.UserUpdate;
+import com.ssembara.springnews.application.responses.ResponseGlobal;
 import com.ssembara.springnews.presist.services.UserService;
 import com.ssembara.springnews.utility.Response;
 

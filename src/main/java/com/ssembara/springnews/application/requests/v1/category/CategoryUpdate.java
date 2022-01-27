@@ -1,4 +1,4 @@
-package com.ssembara.springnews.application.request.v1.category;
+package com.ssembara.springnews.application.requests.v1.category;
 
 import lombok.Data;
 

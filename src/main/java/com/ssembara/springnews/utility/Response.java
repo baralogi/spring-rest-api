@@ -1,6 +1,6 @@
 package com.ssembara.springnews.utility;
 
-import com.ssembara.springnews.application.response.ResponseGlobal;
+import com.ssembara.springnews.application.responses.ResponseGlobal;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

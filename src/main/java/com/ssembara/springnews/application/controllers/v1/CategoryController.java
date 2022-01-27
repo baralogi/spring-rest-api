@@ -2,9 +2,9 @@ package com.ssembara.springnews.application.controllers.v1;
 
 import javax.validation.Valid;
 
-import com.ssembara.springnews.application.request.v1.category.CategoryStore;
-import com.ssembara.springnews.application.request.v1.category.CategoryUpdate;
-import com.ssembara.springnews.application.response.ResponseGlobal;
+import com.ssembara.springnews.application.requests.v1.category.CategoryStore;
+import com.ssembara.springnews.application.requests.v1.category.CategoryUpdate;
+import com.ssembara.springnews.application.responses.ResponseGlobal;
 import com.ssembara.springnews.presist.services.CategoryService;
 import com.ssembara.springnews.utility.Response;
 

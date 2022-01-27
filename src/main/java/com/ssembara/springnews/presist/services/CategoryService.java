@@ -3,8 +3,8 @@ package com.ssembara.springnews.presist.services;
 import java.util.List;
 import java.util.Optional;
 
-import com.ssembara.springnews.application.request.v1.category.CategoryStore;
-import com.ssembara.springnews.application.request.v1.category.CategoryUpdate;
+import com.ssembara.springnews.application.requests.v1.category.CategoryStore;
+import com.ssembara.springnews.application.requests.v1.category.CategoryUpdate;
 import com.ssembara.springnews.presist.models.Category;
 import com.ssembara.springnews.presist.repositories.CategoryRepository;
 

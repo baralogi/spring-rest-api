@@ -2,8 +2,8 @@ package com.ssembara.springnews.presist.services;
 
 import java.util.List;
 
-import com.ssembara.springnews.application.request.v1.user.UserStore;
-import com.ssembara.springnews.application.request.v1.user.UserUpdate;
+import com.ssembara.springnews.application.requests.v1.user.UserStore;
+import com.ssembara.springnews.application.requests.v1.user.UserUpdate;
 import com.ssembara.springnews.presist.models.User;
 import com.ssembara.springnews.presist.repositories.UserRepository;
 
