@@ -8,5 +8,7 @@ public class ResponseGlobal {
     private int code;
     private String status;
     private Object data;
+    private Object erorrs;
+    private String message;
 
 }

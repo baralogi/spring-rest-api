@@ -48,7 +48,7 @@ public class CategoryController {
 
     @PutMapping("/{id}")
     public ResponseEntity<ResponseGlobal> update(@PathVariable Long id,
-            @RequestBody CategoryUpdate data) throws Exception {
+            @Valid @RequestBody CategoryUpdate data) throws Exception {
         useCase.updateCategory(id, data);
         return Response.buildV1("Success update data");
     }
