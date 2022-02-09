@@ -5,16 +5,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
 
 @Entity
-@Table(name = "articles")
+@Table(name = "roles")
 @Data
-public class Article {
+public class Role {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,13 +21,5 @@ public class Article {
     private Long id;
 
     @Column
-    private String title;
-
-    @Column(length = 1000)
-    private String description;
-
-    @ManyToOne(targetEntity = User.class)
-    @JoinColumn(name = "authorId")
-    private User author;
-
+    private String name;
 }

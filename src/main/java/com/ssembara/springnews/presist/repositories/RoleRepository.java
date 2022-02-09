@@ -1,11 +1,11 @@
 package com.ssembara.springnews.presist.repositories;
 
-import com.ssembara.springnews.presist.models.User;
+import com.ssembara.springnews.presist.models.Role;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
-    User findByUsername(String username);
+public interface RoleRepository extends JpaRepository<Role, Long> {
+    Role findByName(String name);
 }
