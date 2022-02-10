@@ -6,7 +6,9 @@ import java.util.Optional;
 import com.ssembara.springnews.application.requests.v1.article.ArticleStore;
 import com.ssembara.springnews.application.requests.v1.article.ArticleUpdate;
 import com.ssembara.springnews.presist.models.Article;
+import com.ssembara.springnews.presist.models.User;
 import com.ssembara.springnews.presist.repositories.ArticleRepository;
+import com.ssembara.springnews.presist.repositories.UserRepository;
 
 import org.springframework.stereotype.Service;
 
@@ -18,15 +20,18 @@ public class ArticleService {
 
     private ArticleRepository repo;
 
+    private UserRepository userRepo;
+
     public List<Article> getAll() {
         return repo.findAll();
     }
 
     public void storeArticle(ArticleStore storeArticle) {
+        User author = userRepo.getReferenceById(storeArticle.getAuthorId());
         var newArticle = new Article();
         newArticle.setTitle(storeArticle.getTitle());
         newArticle.setDescription(storeArticle.getDescription());
-        // newArticle.setAuthor(storeArticle.getAuthor());
+        newArticle.setAuthor(author);
 
         repo.save(newArticle);
     }

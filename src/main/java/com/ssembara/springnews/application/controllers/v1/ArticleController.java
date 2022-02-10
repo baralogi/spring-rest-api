@@ -33,7 +33,12 @@ public class ArticleController {
     public ResponseEntity<ResponseGlobal> store(
             @Valid @RequestBody ArticleStore data) throws Exception {
         service.storeArticle(data);
-        return Response.buildV1("Success create data");
+        try {
+            return Response.buildV1("Success create data");
+        } catch (Exception e) {
+            return Response.buildErrorV1(data);
+        }
+
     }
 
 }

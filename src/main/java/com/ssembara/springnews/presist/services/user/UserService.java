@@ -3,6 +3,7 @@ package com.ssembara.springnews.presist.services.user;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 import com.ssembara.springnews.presist.models.Role;
 import com.ssembara.springnews.presist.models.User;
@@ -32,7 +33,7 @@ public class UserService implements UserInterface, UserDetailsService {
     @Autowired
     private RoleRepository roleRepo;
 
-    // private PasswordEncoder passwordEncoder;
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -55,6 +56,7 @@ public class UserService implements UserInterface, UserDetailsService {
     @Override
     public User storeUser(User user) {
         log.info("saving new user :{}", user.getUsername());
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepo.save(user);
     }
 
@@ -79,6 +81,11 @@ public class UserService implements UserInterface, UserDetailsService {
     @Override
     public List<User> getUsers() {
         return userRepo.findAll();
+    }
+
+    @Override
+    public Optional<User> getById(Long id) {
+        return userRepo.findById(id);
     }
 
 }
